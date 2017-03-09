@@ -1,0 +1,23 @@
+<div class="col-md-12" style="color:white;background:gray;">
+  <label>&nbsp;ข้อมูลทางการเงิน</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <br>
+  <label class="col-md-2">รายได้ต่อปี&nbsp;</label>
+  <input type="radio" [(ngModel)]="money" name="money" value="ต่ำกว่า 5 แสนบาท" (click)="changeMoneyPerYear($event)" />&nbsp;ต่ำกว่า 5 แสนบาท
+  <input type="radio" [(ngModel)]="money" name="money" value="ตั้งแต่ 5 แสนบาท แต่ไม่ถึง 1 ล้านบาท" (click)="changeMoneyPerYear($event)"/>&nbsp;ตั้งแต่ 5 แสนบาท แต่ไม่ถึง 1 ล้านบาท
+  <input type="radio" [(ngModel)]="money" name="money" value="ตั้งแต่ 1 ล้าน แต่ไม่ถึง 4 ล้านบาท" (click)="changeMoneyPerYear($event)"/>&nbsp;ตั้งแต่ 1 ล้าน แต่ไม่ถึง 4 ล้านบาท
+  <input type="radio" [(ngModel)]="money" name="money" value="ตั้งแต่ 4 ล้านบาทขึ้นไป" (click)="changeMoneyPerYear($event)"/>&nbsp;ตั้งแต่ 4 ล้านบาทขึ้นไป
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2">มูลค่าทรัพย์สินส่วนตัว&nbsp;</label>
+  <input type="radio" [(ngModel)]="moneycustomer" name="moneycustomer" value="ต่ำกว่า 2 ล้านบาท" (click)="changeMoneyCustomer($event)" />&nbsp;ต่ำกว่า 2 ล้านบาท
+  <input type="radio" [(ngModel)]="moneycustomer" name="moneycustomer" value="ตั้งแต่ 2 ล้าน แต่ไม่ถึง 5 ล้านบาท" (click)="changeMoneyCustomer($event)"/>&nbsp;ตั้งแต่ 2 ล้าน แต่ไม่ถึง 5 ล้านบาท
+  <input type="radio" [(ngModel)]="moneycustomer" name="moneycustomer" value="ตั้งแต่ 5 ล้าน แต่ไม่ถึง 10 ล้านบาท" (click)="changeMoneyCustomer($event)"/>&nbsp;ตั้งแต่ 5 ล้าน แต่ไม่ถึง 10 ล้านบาท
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input type="radio" [(ngModel)]="moneycustomer" name="moneycustomer" value="ตั้งแต่ 10 ล้าน แต่ไม่ถึง 30 ล้านบาท" (click)="changeMoneyCustomer($event)"/>&nbsp;ตั้งแต่ 10 ล้าน แต่ไม่ถึง 30 ล้านบาท
+  <input type="radio" [(ngModel)]="moneycustomer" name="moneycustomer" value="ตั้งแต่ 30 ล้าน แต่ไม่ถึง 50 ล้านบาท" (click)="changeMoneyCustomer($event)"/>&nbsp;ตั้งแต่ 30 ล้าน แต่ไม่ถึง 50 ล้านบาท
+  <input type="radio" [(ngModel)]="moneycustomer" name="moneycustomer" value="ตั้งแต่ 50 ล้านบาทขึ้นไป" (click)="changeMoneyCustomer($event)"/>&nbsp;ตั้งแต่ 50 ล้านบาทขึ้นไป
+</div>

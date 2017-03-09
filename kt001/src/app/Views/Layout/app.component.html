@@ -1,0 +1,130 @@
+<!--=========================================================================-->
+                            <!-- Input -->
+<!--=========================================================================-->
+<div class="table-responsive">
+  <div class="container">
+      <br>
+        <label>Input Fields</label>
+        <div class="row solid">
+          <!-- ข้อมูลลูกค้า -->
+          <router-outlet name='user'></router-outlet>
+          <!-- ข้อมูลทางการเงิน -->
+          <router-outlet name='money'></router-outlet>
+          <!-- ข้อมูลการศึกษา /การทำงาน -->
+          <router-outlet name='job'></router-outlet>
+          <!-- การเปิดเผยข้อมูล -->
+          <router-outlet name='disclosure'></router-outlet>
+          <br>
+        </div>
+</div><!-- end container -->
+<!--=========================================================================-->
+                              <!-- Complie -->
+<!--=========================================================================-->
+<hr>
+<div class="container">
+    <head-component></head-component>
+    <div class="row solid">
+      <!-- ข้อมูลลูกค้า -->
+      <div class="col-md-12" style="color:white;background:gray;">
+        <label>&nbsp;ข้อมูลลูกค้า</label>
+      </div><br/><br/>
+       <div class="col-xs-12">
+         <div class="col-md-4 form-inline">ชื่อ : {{ Name?.Nameth ? Name?.Nameth : '-' }}</div>
+         <div class="row col-md-4 form-inline">นามสกุล : {{ Name?.Surnameth ? Name?.Surnameth : '-' }}</div>
+         <div class="row col-md-4 form-inline">("ลูกค้า" หรือ "ผู้ขอใช้บริการ")</div>
+       </div>
+       <div class="col-xs-12">
+         <div class="col-md-4 form-inline">Name : {{ Name?.Nameeng ? Name?.Nameeng : '-' }}</div>
+         <div class="row col-md-4 form-inline">Surname : {{ Name?.Surnameeng ? Name?.Surnameeng : '-' }}</div>
+       </div>
+       <div class="col-xs-12">
+         <div class="col-md-3 form-inline">รหัสบัตรประชาชน : {{  Name?.Id13 ? Name?.Id13 : '-' }}</div>
+      </div>
+      <div class="col-xs-12">
+        <div class="col-md-3 form-inline">สัญชาติ :
+          <label>{{ Name?.Nationality ? Name?.Nationality : '-' }}</label>
+        </div>
+     </div>
+     <div class="col-xs-12">
+       <div class="col-md-3 form-inline">สถานภาพการสมรสตามกฏหมาย : {{ Name?.Status ? Name?.Status : '-' }}</div>
+     </div>
+     <div class="col-xs-9">
+       <div class="col-md-2 form-inline">ข้อมูลคู่สมรส</div>
+       <div class="col-md-4 form-inline">ชื่อ : {{ Name?.NameMarryth ? Name?.NameMarryth : '-' }}</div>
+       <div class="row col-md-4 form-inline">นามสกุล : {{ Name?.SurnameMarryth ? Name?.SurnameMarryth : '-' }}</div>
+     </div>
+     <div class="col-xs-9">
+       <div class="col-md-2 form-inline"></div>
+       <div class="col-md-4 form-inline">Name : {{ Name?.NameMarryeng ? Name?.NameMarryeng : '-' }}</div>
+       <div class="row col-md-4 form-inline">Surname : {{ Name?.SurnameMarryeng ? Name?.SurnameMarryeng : '-' }}</div>
+     </div>
+    <!-- ข้อมูลทางการเงิน -->
+     <div class="col-md-12" style="color:white;background:gray;">
+       <label>&nbsp;ข้อมูลทางการเงิน</label>
+     </div>
+     <div class="col-xs-12">
+         <br>
+       <div class="col-md-5 form-inline">รายได้ต่อปี : {{ Money?.money ? Money?.money : '-' }}</div>
+     </div>
+     <div class="col-xs-12">
+       <div class="col-md-5 form-inline">มูลค่าทรัพย์สินส่วนตัว : {{ Money?.customer ? Money?.customer : '-' }}</div>
+     </div>
+
+     <!-- ข้อมูลการศึกษา /การทำงาน -->
+     <div class="col-md-12" style="color:white;background:gray;">
+       <label>&nbsp;ข้อมูลการศึกษา / การทำงาน</label>
+     </div>
+     <div class="col-xs-12">
+         <br>
+       <div class="col-md-5 form-inline">การศึกษาสูงสุด : {{ Job?.study ? Job?.study : '-' }}</div>
+     </div>
+     <div class="col-xs-12">
+       <div class="col-md-5 form-inline">อาชีพ : {{ Job?.job ? Job?.job : '-' }}</div>
+     </div>
+      <div class="col-xs-12">
+          <div class="col-md-5 from-inline">สถานที่ทำงาน : {{ Job?.jobName ? Job?.jobName : '-' }}</div>
+          <div class="col-md-5 from-inline">ตำแหน่ง : {{ Job?.jobRule ? Job?.jobRule : '-' }}</div>
+      </div>
+       <div class="col-xs-12">
+           <div class="col-md-8 form-inline">ประเภทธุรกิจของสถานที่ทำงาน : {{ Job?.jobType ? Job.jobType : '-' }}</div>
+       </div>
+
+       <!-- การเปิดเผยข้อมูล -->
+        <div class="col-md-12" style="color:white;background:gray;">
+            <label>&nbsp;การเปิดเผยข้อมูลเพิ่มเติมตามที่กฏหมายกำหนด </label>
+        </div>
+        <div class="col-xs-12">
+            <br>
+            <div class="col-md-5 form-inline">1) แหล่งที่มาของรายได้หลักมาจาก : {{ Disclosure?.disclosureOne ?  Disclosure?.disclosureOne : '-' }}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-5 form-inline">2) ประเทศที่มาของรายได้หลักมาจาก : {{ Disclosure?.disclosureTwo ?  Disclosure?.disclosureTwo : '-' }}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-8 form-inline">3) ท่านอยู่ระหว่างการถูกยับยั้งการทำธุรกรรม ยึดหรืออายัดทรัพย์สิน หรือเป็นผู้ที่ศาลมีคำสั่งให้ทรัพย์สิน ตกเป็นของแผ่นดินตามกฏหมายว่าด้วยการป้องกันและปราบปรามการฟอกเงินหรือไม่
+            : {{ Disclosure?.disclosureThree ?  Disclosure?.disclosureThree : '-' }}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-8 form-inline">4) ท่านเป็นหรือเคยเป็นบุคคลที่กระทำความผิดเกี่ยวกับความผิดฐานฟอกเงิน ความผิดมูลฐาน ตามกฏหมายฟอกเงิน หรือความผิดเกี่ยวกับการก่อการร้ายและสนับสนุสการเงินแก่การก่อการร้ายหรือไม่
+                : {{ Disclosure?.disclosureFour ?  Disclosure?.disclosureFour : '-' }}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-8 form-inline">5) ท่านเป็นบุคคลที่มีสถานภาพทางการเมืองไทยหรือต่างประเทศ ใช่หรือไม่
+                : {{ Disclosure?.disclosureFive ?  Disclosure?.disclosureFive : '-' }}</div>
+        </div>
+        <div class="col-xs-12">
+            <div class="col-md-8 form-inline">6) บุคคลที่ได้รับประโยชน์จากการทำธุรกรรมที่แท้จริง
+                : {{ Disclosure?.disclosureSix ?  Disclosure?.disclosureSix : '-' }}</div>
+        </div>
+
+    </div>
+  </div>
+  <br><br>
+</div> <!-- end table-responsive -->
+
+<style media="screen">
+div.solid {
+  border-style: solid;
+  border-color: #000000 #000000;
+}
+</style>

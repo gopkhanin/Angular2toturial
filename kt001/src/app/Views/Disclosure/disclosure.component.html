@@ -1,0 +1,192 @@
+<div class="col-md-12" style="color:white;background:gray;">
+  <label>&nbsp;การเปิดเผยข้อมูลเพิ่มเติมตามที่กฏหมายกำหนด </label>
+</div>
+<div class="row col-md-12 form-inline">
+  <br>
+  <label class="col-md-3"> 1) แหล่งที่มาของรายได้หลักมาจาก</label>
+        <input
+              style="text-align: left"
+              type="radio"
+              [(ngModel)]="disclosureOne"
+              name="disclosureOne"
+              (click)="changedisclosureOne($event)"
+              value="เงินเดือน"
+        /><label style="text-align: left" >&nbsp;เงินเดือน</label>
+
+        <input
+               style="text-align: left"
+               type="radio"
+               [(ngModel)]="disclosureOne"
+               name="disclosureOne"
+               (click)="changedisclosureOne($event)"
+               value="การประกอบธุรกิจ"
+        /><label style="text-align: left" >&nbsp;การประกอบธุรกิจ</label>
+
+        <input
+               style="text-align: left"
+               type="radio"
+               [(ngModel)]="disclosureOne"
+               name="disclosureOne"
+               (click)="changedisclosureOne($event)"
+               value="การลงทุน"
+        /><label style="text-align: left" >&nbsp;การลงทุน</label>
+
+        <input
+                style="text-align: left"
+                type="radio"
+                [(ngModel)]="disclosureOne"
+                name="disclosureOne"
+                (click)="changedisclosureOneetc($event)"
+                value="อื่นๆ"
+        /><label style="text-align: left">&nbsp;อื่นๆ (โปรดระบุ)</label>
+        <input
+                class="form-control"
+                type="text"
+                [(ngModel)]="disclosureOneTxt"
+                name="disclosureOneTxt"
+                *ngIf="showOne"
+                (ngModelChange)="changeinputDisclosure($event)"
+                maxlength="64"
+        />
+</div>
+
+<div class="row col-md-12 form-inline">
+  <label class="col-md-3"> 2) ประเทศที่มาของรายได้หลักมาจาก</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureTwo"
+          name="disclosureTwo"
+          (click)="changedisclosureTwo($event)"
+          value="ประเทศไทย"
+  /><label style="text-align: left" >&nbsp;ประเทศไทย</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureTwo"
+          name="disclosureTwo"
+          (click)="changedisclosureTwoetc($event)"
+          value="ประเทศอื่น"
+  /><label style="text-align: left">&nbsp;ประเทศอื่น (โปรดระบุ)</label>
+  <input
+          class="form-control"
+          type="text"
+          [(ngModel)]="disclosureTwoTxt"
+          name="disclosureTwoTxt"
+          *ngIf="showTwo"
+          (ngModelChange)="changeinputDisclosureTwo($event)"
+          maxlength="64"
+  />
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-8"> 3) ท่านอยู่ระหว่างการถูกยับยั้งการทำธุรกรรม ยึดหรืออายัดทรัพย์สิน หรือเป็นผู้ที่ศาลมีคำสั่งให้ทรัพย์สินตกเป็นของแผ่นดินตามกฏหมายว่าด้วยการป้องกันและปราบปรามการฟอกเงินหรือไม่</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureThree"
+          name="disclosureThree"
+          (click)="changedisclosureThree($event)"
+          value="ไม่ใช่"
+  /><label style="text-align: left" >&nbsp;ไม่ใช่</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureThree"
+          name="disclosureThree"
+          (click)="changedisclosureThreeetc($event)"
+          value="ใช่"
+  /><label style="text-align: left">&nbsp;ใช่ โปรดระบุ</label>
+  <input
+          class="form-control"
+          type="text"
+          [(ngModel)]="disclosureThreeTxt"
+          name="disclosureThreeTxt"
+          *ngIf="showThree"
+          (ngModelChange)="changeinputDisclosureThree($event)"
+          maxlength="64"
+  />
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-8"> 4) ท่านเป็นหรือเคยเป็นบุคคลที่กระทำความผิดเกี่ยวกับความผิดฐานฟอกเงิน ความผิดมูลฐาน ตามกฏหมายฟอกเงิน หรือความผิดเกี่ยวกับการก่อการร้ายและสนับสนุสการเงินแก่การก่อการร้ายหรือไม่</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureFour"
+          name="disclosureFour"
+          (click)="changedisclosureFour($event)"
+          value="ไม่เคย"
+  /><label style="text-align: left" >&nbsp;ไม่เคย</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureFour"
+          name="disclosureFour"
+          (click)="changedisclosureFouretc($event)"
+          value="เคย"
+  /><label style="text-align: left">&nbsp;เคย โปรดระบุ</label>
+  <input
+          class="form-control"
+          type="text"
+          [(ngModel)]="disclosureFourTxt"
+          name="disclosureFourTxt"
+          *ngIf="showFour"
+          (ngModelChange)="changeinputDisclosureFour($event)"
+          maxlength="64"
+  />
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-8"> 5) ท่านเป็นบุคคลที่มีสถานภาพทางการเมืองไทยหรือต่างประเทศ ใช่หรือไม่</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureFive"
+          name="disclosureFive"
+          (click)="changedisclosureFive($event)"
+          value="ไม่ใช่"
+  /><label style="text-align: left" >&nbsp;ไม่ใช่</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureFive"
+          name="disclosureFive"
+          (click)="changedisclosureFiveetc($event)"
+          value="ใช่"
+  /><label style="text-align: left">&nbsp;ใช่ โปรดระบุ</label>
+  <input
+          class="form-control"
+          type="text"
+          [(ngModel)]="disclosureFiveTxt"
+          name="disclosureFiveTxt"
+          *ngIf="showFive"
+          (ngModelChange)="changeinputDisclosureFive($event)"
+          maxlength="64"
+  />
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-8"> 6) บุคคลที่ได้รับประโยชน์จากการทำธุรกรรมที่แท้จริง</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureSix"
+          name="disclosureSix"
+          (click)="changedisclosureSix($event)"
+          value="ลูกค้า"
+  /><label style="text-align: left" >&nbsp;ลูกค้า</label>
+  <input
+          style="text-align: left"
+          type="radio"
+          [(ngModel)]="disclosureSix"
+          name="disclosureSix"
+          (click)="changedisclosureSixetc($event)"
+          value="อื่นๆ"
+  /><label style="text-align: left">&nbsp;อื่นๆ โปรดระบุ</label>
+  <input
+          class="form-control"
+          type="text"
+          [(ngModel)]="disclosureSixTxt"
+          name="disclosureSixTxt"
+          *ngIf="showSix"
+          (ngModelChange)="changeinputDisclosureSix($event)"
+          maxlength="64"
+  />
+</div>

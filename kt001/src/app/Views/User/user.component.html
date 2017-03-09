@@ -1,0 +1,58 @@
+<div class="col-md-12" style="color:white;background:gray;">
+  <label>&nbsp;ข้อมูลลูกค้า</label>
+</div>
+<br/><br/>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-1">ชื่อ&nbsp;</label>
+    <input type="text" [(ngModel)]="_Name.Nameth" (ngModelChange)="changeNameth($event)" class="form-control col-md-3" maxlength="64">
+  <label class="col-md-1">นามสกุล&nbsp;&nbsp;</label>
+    <input type="text" [(ngModel)]="_Name.Surnameth" (ngModelChange)="changeSurnameth($event)" class="form-control col-md-5" maxlength="64"><br/>
+</div><br/><br/>
+
+<div class="row col-md-12 form-inline">
+  <label class="col-md-1">Name&nbsp;</label><input type="text" [(ngModel)]="_Name.Nameeng" (ngModelChange)="changeNameeng($event)" class="form-control col-md-3" maxlength="64">
+  <label class="col-md-1">Surname&nbsp;</label><input type="text" [(ngModel)]="_Name.Surnameeng" (ngModelChange)="changeSurnameeng($event)" class="form-control col-md-3" maxlength="64"><br/>
+</div><br/><br/>
+
+<div class="row col-md-9 form-inline">
+  <label class="col-md-2">รหัสบัตรประชาชน&nbsp;</label>
+  <input type="text" [(ngModel)]="_Name.id13" (ngModelChange)="changeid13($event)" maxlength="13" class="form-control col-md-3">
+</div><br/><br/>
+
+<div class="row col-md-10 form-inline"  ng-init="nationality_thai=ไทย">
+  <label class="col-md-1">สัญชาติ&nbsp;</label>
+  <input type="radio" name="natonality" [(ngModel)]="_Name.nationality_thai" value="ไทย"
+         (click)="hideinput($event)" [checked]="_Name.nationality_thai == '1'" required>&nbsp;ไทย
+  <input type="radio" name="natonality" [(ngModel)]="_Name.nationality_etc" value=""
+         (click)="showinput($event)" (ngModelChange)="changeNationality_etc($event)" >&nbsp;สัญชาติอื่น/หากมากกว่า 1 สัญชาติ โปรดระบุทุกสัญชาติที่ลูกค้ามี&nbsp;
+  <input type="text" [(ngModel)]="_Name.nationality_etc_txt" class="form-control" *ngIf="show"
+    (ngModelChange)="changeNationality_etc($event)" id="textnationality_etc" maxlength="64" >
+</div>
+
+<div class="row col-md-8 form-inline">
+  <label class="col-md-5">สถานภาพทางการสมรสตามกฏหมาย :&nbsp;</label>
+  <input type="radio" [(ngModel)]="status" name="status" value="โสด" (click)="changestatus($event)"/>&nbsp;โสด
+  <input type="radio" [(ngModel)]="status" name="status" value="สมรส" (click)="changestatus($event)"/>&nbsp;สมรส
+  <input type="radio" [(ngModel)]="status" name="status" value="หม้าย" (click)="changestatus($event)"/>&nbsp;หม้าย
+  <input type="radio" [(ngModel)]="status" name="status" value="หย่า" (click)="changestatus($event)"/>&nbsp;หย่า
+</div>
+
+<div *ngIf="showStatus">
+  <div class="row col-md-9 form-inline" >
+    <label class="col-md-2">ข้อมูลคู่สมรส</label>
+
+    <label class="col-md-1">ชื่อ &nbsp;</label>
+    <input type="text" [(ngModel)]=Namemarryth (ngModelChange)="changeNameMarryth($event)" class="form-control col-md-2" maxlength="64">
+
+    <label class="col-md-2">นามสกุล &nbsp;</label>
+    <input type="text" [(ngModel)]=Surnamemarryth (ngModelChange)="changeSurnameMarryth($event)" class="form-control col-md-2" maxlength="64">
+  </div>
+  <br/><br/>
+
+  <div class="row col-md-9 form-inline">
+    <label class="col-md-2"></label>
+    <label class="col-md-1">Name &nbsp;</label><input type="text" [(ngModel)]=Namemarryeng (ngModelChange)="changeNameMarryeng($event)" class="form-control col-md-2" maxlength="64">
+
+    <label class="col-md-2">Surname &nbsp;</label><input type="text" [(ngModel)]=Surnamemarryeng (ngModelChange)="changeSurnameMarryeng($event)" class="form-control col-md-2" maxlength="64"><br/>
+  </div>
+</div>

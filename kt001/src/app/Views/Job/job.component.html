@@ -1,0 +1,110 @@
+<div class="col-md-12" style="color:white;background:gray;">
+  <label>&nbsp;ข้อมูลการศึกษา / การทำงาน</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <br>
+  <label class="col-md-2">การศึกษาสูงสุด</label>
+  <input type="radio" [(ngModel)]="study" name="study" value="ต่ำกว่าปริญญาตรี" (click)="changestudy($event) "/>&nbsp;ต่ำกว่าปริญญาตรี
+  <input type="radio" [(ngModel)]="study" name="study" value="ปริญญาตรี" (click)="changestudy($event)" />&nbsp;ปริญญาตรี
+  <input type="radio" [(ngModel)]="study" name="study" value="สูงกว่าปริญญาตรี" (click)="changestudy($event)" />&nbsp;สูงกว่าปริญญาตรี
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2">อาชีพ</label>
+  <input type="radio" [(ngModel)]="job" name="job" value="พนักงาน/ผู้บริหารบริษัทเอกชน" (click)="changejob($event)" />&nbsp;พนักงาน/ผู้บริหารบริษัทเอกชน
+  <input type="radio" [(ngModel)]="job" name="job" value="เจ้าของกิจการ" (click)="changejob($event)"/>&nbsp;เจ้าของกิจการ
+  <input type="radio" [(ngModel)]="job" name="job" value="ข้าราชการ/พนักงานรัฐวิสาหกิจ" (click)="changejob($event)"/>&nbsp;ข้าราชการ/พนักงานรัฐวิสาหกิจ
+  <input type="radio" [(ngModel)]="job" name="job" value="นิสิต/นักศึกษา" (click)="changejob($event)"/>&nbsp;นิสิต/นักศึกษา
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input type="radio" [(ngModel)]="job" name="job" value="พ่อบ้าน/แม่บ้าน/ไม่ได้ทำงาน" (click)="changejob($event)"/>&nbsp;พ่อบ้าน/แม่บ้าน/ไม่ได้ทำงาน
+  <input type="radio" [(ngModel)]="job" name="job" value="เกษียณอายุ" (click)="changejob($event)"/>&nbsp;เกษียณอายุ
+  <input type="radio" [(ngModel)]="job" name="job" value="อื่นๆ" (click)="changejobetc($event)" />&nbsp;อื่นๆ (โปรดระบุ)
+  <input class="form-control" type="text" [(ngModel)]="jobtxt" name="job" *ngIf="show" (ngModelChange)="changeinputjobetc($event)" id="jobtxt_id" >
+</div>
+<br>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2">ชื่อสถานที่ทำงาน</label>
+  <input type="text" [(ngModel)]=jobName (ngModelChange)="changeinputjobName($event)" name="jobName" class="form-control col-md-3" maxlength="64" />
+  <label class="col-md-1">ตำแหน่ง</label>
+  <input type="text" [(ngModel)]=jobRule name="jobRule" (ngModelChange)="changeinputJobRule($event)" class="form-control col-md-2" maxlength="64"/>
+</div>
+<div class="row col-md-10 form-inline">
+  <label class="col-md-5">ประเภทธุรกิจของสถานที่ทำงาน</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="หน่วยงานราชการ/รัฐวิสาหกิจ" /><label>&nbsp;หน่วยงานราชการ/รัฐวิสาหกิจ</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="สถาบันการศึกษา" />
+  <label style="text-align: left">&nbsp;สถาบันการศึกษา</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="การเงิน/การธนาคาร/ประกันภัย" />
+  <label style="text-align: left">&nbsp;การเงิน/การธนานคาร/ประกันภัย</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="วิศกรรม/เทคโนโลยี/ยานยนต์"  />
+  <label style="text-align: left">&nbsp;วิศวกรรม/เทคโนโลยี/ยานยนต์</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="พลังงาน/สาธารณูปโภค" />
+  <label style="text-align: left">&nbsp;พลังงาน/สาธารณูปโภค</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="ก่อสร้าง/อสังหาริมทรัพย์" />
+  <label style="text-align: left">&nbsp;ก่อสร้าง/อสังหาริมทรัพย์</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="ค้าส่ง/ค้าปลีก"  />
+  <label style="text-align: left">&nbsp;ค้าส่ง/ค้าปลีก</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="ขนส่ง/บรรจุภัณฑ์" />
+  <label style="text-align: left">&nbsp;ขนส่ง/บรรจุภัณฑ์</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="สื่อ/สิ่งพิมพ์/บันเทิง" />
+  <label style="text-align: left">&nbsp;สื่อ/สิ่งพิมพ์/บันเทิง</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="บริการด้านความงาม/สุขภาพบริการด้านความงาม/สุขภาพ"  />
+  <label style="text-align: left">&nbsp;บริการด้านความงาม/สุขภาพ</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="บริการทางการแพทย์" />
+  <label style="text-align: left">&nbsp;บริการทางการแพทย์</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="ศาสนสถาน/องค์กรที่ไม่แสดงหากำไร/การกุศล" />
+  <label style="text-align: left">&nbsp;ศาสนสถาน/องค์กรที่ไม่แสดงหากำไร/การกุศล</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="สำนักกฏหมายสำนักกฏหมาย"  />
+  <label style="text-align: left" >&nbsp;สำนักกฏหมายสำนักกฏหมาย</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="สิ่งทอ/เสื้อผ้า/เครื่องแต่งกาย" />
+  <label style="text-align: left">&nbsp;สิ่งทอ/เสื้อผ้า/เครื่องแต่งกาย</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="ธุรกิจแลกเปลี่ยนเงินตรา/โอนเงินระหว่างประเทศ" />
+  <label style="text-align: left">&nbsp;ธุรกิจแลกเปลี่ยนเงินตรา/โอนเงินระหว่างประเทศ</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="บริการด้านการท่องเที่ยว/บริษัททัวร์"  />
+  <label style="text-align: left" >&nbsp;บริการด้านการท่องเที่ยว/บริษัททัวร์</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="" />
+  <label style="text-align: left">&nbsp;ค้าของเก่า/วัตถุโบราณ</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="ค้าทอง/โลหะมีค่า/อัญมณี/เครื่องประดับมีค่า" />
+  <label style="text-align: left">&nbsp;ค้าทอง/โลหะมีค่า/อัญมณี/เครื่องประดับมีค่า</label>
+</div>
+<div class="row col-md-12 form-inline">
+  <label class="col-md-2"></label>
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobtype($event)" value="บริการด้านการจัดหางาน"  />
+  <label style="text-align: left" >&nbsp;บริการด้านการจัดหางาน</label>
+
+  <input style="text-align: left" type="radio" [(ngModel)]="jobtype" name="jobtype" (click)="changejobTypeetc($event)" value="อื่นๆ" />
+  <label style="text-align: left">&nbsp;อื่นๆ (โปรดระบุ)</label>
+  <input class="form-control" type="text" [(ngModel)]="jobTypetxt" name="jobtype" *ngIf="showType" (ngModelChange)="changeinputjobTypeetc($event)" >
+</div>
+
+
